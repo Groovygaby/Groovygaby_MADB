@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--
+		# = ID (Usually gets used once for example the top heading)
+		. = Class (Usually gets re-used for example sizes of the paragrahps)
+		h1 = Style all h1's on the website
+	 -->
+  <!-- Use this section for your webpage metadata - more detail https://www.w3schools.com/html/html_head.asp -->
+  <title>Fake news quiz</title>
+  <link rel="stylesheet" href="style/styles.css">
+  <link rel="stylesheet" href="style/quiz.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <!--  When you have a stylesheet you can uncomment the link element above and edit the href to suit your file system and 		point to your CSS sheet -->
+</head>
+
+<!-- Start of Menu -->
+<header id="menu">
+  <ul class="main-nav">
+    <li><a href="index.html">Fake News</a></li>
+    <li><a href="how-to-identify-fake-news.html">What is Fake News</a></li>
+    <li><a href="fake-news-stories.html">Fake News Stories</a></li>
+    <li><a href="how-to-spot-fake-news.html">How to Spot Fake News</a></li>
+    <li><a href="fake-news-quiz.html">Fake News Quiz</a></li>
+  </ul>
+</header>
+<!-- End of Menu -->
+
+<body>
+  <div>
+    <div id="header">
+      <div class="header-text">
+        <h1 class="padding">Fake News Quiz</h1>
+        <p>Test your knowledge with this interactive Fake News Quiz. See how well you can
+        spot misinformation and sharpen your digital literacy skills.
+        </p>
+      </div>
+    </div>
+
+    <div id="container">
+
+      <div id="content">
+
+
+        <body onload="NextQuestion(0)">
+
+          <main>
+            <!-- creating a modal for when quiz ends -->
+            <div class="modal-container" id="score-modal">
+
+              <div class="modal-content-container">
+
+                <h1>Congratulations, Quiz Completed.</h1>
+
+                <div class="grade-details">
+                  <p>Attempts : 10</p>
+                  <p>Wrong Answers : <span id="wrong-answers"></span></p>
+                  <p>Right Answers : <span id="right-answers"></span></p>
+                  <p>Grade : <span id="grade-percentage"></span>%</p>
+                  <p><span id="remarks"></span></p>
+                </div>
+
+                <div class="modal-button-container">
+                  <button onclick="closeScoreModal()">Continue</button>
+                </div>
+
+              </div>
+            </div>
+            <!-- end of modal of quiz details-->
+
+            <div class="game-quiz-container">
+
+              <div class="game-details-container">
+                <h1>Score : <span id="player-score"></span> / 10</h1>
+                <h1> Question : <span id="question-number"></span> / 10</h1>
+              </div>
+
+              <div class="game-question-container">
+                <h1 id="display-question"></h1>
+              </div>
+
+              <div class="game-options-container">
+
+                <div class="modal-container" id="option-modal">
+
+                  <div class="modal-content-container">
+                    <h1>Please Pick An Option</h1>
+
+                    <div class="modal-button-container">
+                      <button onclick="closeOptionModal()">Continue</button>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <span>
+                  <input type="radio" id="option-one" name="option"
+                    class="radio" value="optionA" />
+                  <label for="option-one" class="option"
+                    id="option-one-label"></label>
+                </span>
+
+
+                <span>
+                  <input type="radio" id="option-two" name="option"
+                    class="radio" value="optionB" />
+                  <label for="option-two" class="option"
+                    id="option-two-label"></label>
+                </span>
+
+
+                <span>
+                  <input type="radio" id="option-three" name="option"
+                    class="radio" value="optionC" />
+                  <label for="option-three" class="option"
+                    id="option-three-label"></label>
+                </span>
+
+
+                <span>
+                  <input type="radio" id="option-four" name="option"
+                    class="radio" value="optionD" />
+                  <label for="option-four" class="option"
+                    id="option-four-label"></label>
+                </span>
+
+
+              </div>
+
+              <div class="next-button-container">
+                <button onclick="handleNextQuestion()">Next Question</button>
+              </div>
+
+            </div>
+          </main>
+          <script src="js/index.js"></script>
+      </div>
+    </div>
+  </div>
+</body>
+
+<footer>
+  <div class="row inner">
+    <span class="copyright">
+      &copy; 2024 FakeNews</span>
+
+    <span class="meta">
+      <ul class="links">
+        <li><a href="mailto:">Email</a></li>
+        <li><a href="tel:">Call Us</a></li>
+      </ul>
+    </span>
+  </div>
+</footer>
+
+</html>
