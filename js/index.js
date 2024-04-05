@@ -1,5 +1,4 @@
-//this would be the object shape for storing the questions
- //you can change the questions to your own taste or even add more questions..
+
  const questions = [
     {
         "question": "What is Fake News?",
